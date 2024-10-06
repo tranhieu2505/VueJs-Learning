@@ -7,26 +7,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Two way Bindings and class and style</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <style>
+        .demo {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+        }
+        .demo.active {
+            background-color: #3498db; /* Active state color */
+        }
+        .demo.error {
+            background-color: red; /* Error state color */
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <h1>FirstName = {{firstName}} </h1>
-        <p> {{about}} </p>
-        <input v-model="firstName" type="text" placeholder="Input firstName">
-        <textarea v-model="about" cols="30" row="10"></textarea>
-    </div>
+        <div id="app">
+            <div v-bind:style="objectStyle" >
+                <h1>FirstName = {{firstName}} </h1>
+                <p> {{about}} </p>
+                <input v-model="firstName" type="text" placeholder="Input firstName">
+                <textarea v-model="about" cols="30" row="10"></textarea>
+                <div class="demo" v-bind:class="{ active: isActive, error: isError}"></div>
+                <hr>
+                <div :style="{ color: activeColor, fontSize: fontSize + 'px' }">
+                    Test Style Bindings
+                </div>
+            </div>
+        </div>
 </body>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
                 firstName: '',
-                about: ''
+                about: '',
+                textClass: 'active',
+                isActive: true,
+                isError: false,
+                activeColor: 'blue',
+                fontSize: 20,
+                bg: 'https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg',
             },
             methods: {
                 // handleKeyUp(e) {
                 //     this.firstName = e.target.value;
                 // }
+            },
+            computed: {
+                background(){
+                    return 'url(' + this.bg +')';
+                },
+                objectStyle: function(){
+                    return {
+                        backgroundImage: 'url(' + this.bg + ')',
+                        marginLeft: '30px'
+                    }
+                }
             }
         })
     </script>
