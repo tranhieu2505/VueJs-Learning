@@ -25,7 +25,7 @@
         <div class="product">
             <div class="product-image">
                 <div class="image">
-                    <img src="image/blue.jpg" alt="">
+                    <img v-bind:src="getProduct.image" alt="">
                 </div>
             </div>
             <div class="product-content">
@@ -33,18 +33,23 @@
                     <a v-bind:href="url" v-bind:target="target">{{ title }}</a>
                 </h3>
                 <p class="brand">Thương hiệu: No brand</p>
-                <p class="quantity" > Còn lại: 10 Sản phẩm</p>
-                <p class="quantity">Sản phẩm đã hết hàng</p>
+                <p class="quantity" v-if="getProduct.quanlity > 0"> Còn lại: {{ getProduct.quanlity }} Sản phẩm</p>
+                <p class="quanlity" v-if="getProduct.quanlity <= 0">Sản phẩm đã hết hàng</p>
 
                 <div class="wrapper-price">
-                    <div class="final-price">{{formatPrice(price)}} </div>
-                    <div class="origin-price">100.000</div>
-                    <div class="sale-price">10%</div>
+                    <div class="final-price">{{ formatFinalPrice }} </div>
+                    <div class="origin-price">{{ formatOriginalPrice }}</div>
+                    <div class="sale-price">-{{ sale * 100}}%</div>
                 </div>
                 <div class="wrapper-color">
                     <div class="text">Màu sắc</div>
                     <div class="list-color">
-                        <p class="color-text">Màu Đỏ</p>
+                        <p class="color-text">{{ getProduct.textColor}}</p>
+                        <ul>
+                            <li     v-bind:class="{ active: selectedProduct == index }"
+                                    v-for="(item, index) in listProductDetail" v-on:click="handleClickColor($event, index)">
+                                <img v-bind:src="item.image" v-bind:alt="item.textColor"></li>
+                        </ul>
 <!--                        <ul>-->
 <!--                            <li-->
 <!--                                    v-for="(item, index) in listProductDetail"-->
