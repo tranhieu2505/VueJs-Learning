@@ -12,3 +12,4 @@
    Key: value (the value must be a string)
 7. Rendering templates using conditional expressions (declare a key to inform that two components are different to avoid Vue reusing them).
    The v-for loop has a higher priority than v-if
+8. v html in vue
