@@ -1,8 +1,8 @@
 {
-  "name": "wpvuejs",
+  "name": "vuejs-template",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "tranhieu2505 <tranhieuhus@gmail.com>",
+  "author": "luctc <luctc.developer1902@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {

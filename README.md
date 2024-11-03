@@ -13,3 +13,8 @@
 7. Rendering templates using conditional expressions (declare a key to inform that two components are different to avoid Vue reusing them).
    The v-for loop has a higher priority than v-if
 8. v html in vue
+9. component in vue 
+10. Down props in vueprops -> data passed from component. parent into child component -> same syntax as attribute -> attribute binding11. -> sử dụng v-bind:
+12. Props Down -> send data from parent to child component(just use cant change data) 
+13. Event Up -> transmit a message (event) notifying the parent component that it wants to change. The parent component's task is to receive the event and change the data
+    -> Custom event in vuejs
