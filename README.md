@@ -21,3 +21,4 @@
 
 
 ![Screenshot of Dice Game](public/assets/Screenshot.png)
+![Screenshot of Dice Game](https://github.com/username/repository_name/raw/main/public/assets/Screenshot.png)
