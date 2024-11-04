@@ -18,4 +18,6 @@
 12. Props Down -> send data from parent to child component(just use cant change data) 
 13. Event Up -> transmit a message (event) notifying the parent component that it wants to change. The parent component's task is to receive the event and change the data
     -> Custom event in vuejs
-![Screenshot of Dice Game](DiceGame_vue/public/assets/Screenshot.png)
+
+
+![Screenshot of Dice Game](public/assets/Screenshot.png)
