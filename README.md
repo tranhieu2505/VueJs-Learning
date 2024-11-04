@@ -20,6 +20,6 @@
     -> Custom event in vuejs
 
 
-Dice Game
+  Dice Game
 
 <img width="1640" alt="Ảnh chụp Màn hình 2024-11-04 lúc 16 07 19" src="https://github.com/user-attachments/assets/84f32957-13d5-4743-adce-0b1e9b6eff7e">
